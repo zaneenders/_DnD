@@ -1,4 +1,3 @@
-
 /* The basic attributes every character has */
 public protocol CharacterAttributes: CustomStringConvertible {}
 
@@ -69,7 +68,7 @@ public struct Intellect: CharacterAttributes {
 }
 
 public struct Wisdom: CharacterAttributes {
-public init(_ value: Int) {
+    public init(_ value: Int) {
         self.value = value
     }
     public let value: Int
@@ -80,7 +79,7 @@ public init(_ value: Int) {
 }
 
 public struct Charisma: CharacterAttributes {
-public init(_ value: Int) {
+    public init(_ value: Int) {
         self.value = value
     }
     public let value: Int

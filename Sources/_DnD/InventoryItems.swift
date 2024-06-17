@@ -4,7 +4,7 @@ public protocol InventoryItem: CustomStringConvertible {
 }
 
 extension InventoryItem {
-    
+
     public var slotSize: Int {
         1
     }
@@ -14,42 +14,41 @@ extension InventoryItem {
 }
 
 public struct Ration: InventoryItem {
-     public init() {}
+    public init() {}
 }
 public struct Shovel: InventoryItem {
-     public init() {}
+    public init() {}
 }
 public struct Spyglass: InventoryItem {
-     public init() {}
+    public init() {}
 }
 public struct TenFootPole: InventoryItem {
-     public init() {}
+    public init() {}
 }
 public struct Bow: InventoryItem {
-     public init() {}
+    public init() {}
     // Bow (d6 damage, 2 slots, 2 hands, 3 quality) - 15 cp
     public let slotSize: Int = 2
 }
 public struct ArrowsAndQuiver: InventoryItem {
-     public init() {}
+    public init() {}
 }
 
 public struct SmallSpellScroll: InventoryItem {
-     public init() {}
+    public init() {}
 }
 
 // Maybe expand on more on what an ArmorItem type means
 public protocol ArmorItem {}
 public struct Gambeson: InventoryItem, ArmorItem {
-     public init() {}
+    public init() {}
 }
 
 public protocol SmallItem {}
 // TODO break this up to another result builder containing SmallItem
 public struct SmallPouchOf3GreatHealing: InventoryItem {
-     public init() {}
+    public init() {}
 }
-
 
 @resultBuilder
 public enum BagBuilder {
