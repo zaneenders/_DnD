@@ -3,7 +3,7 @@
 To display Character to the terminal run the following command after having Swift installed
 `swift run`
 
-Sample current output
+Sample current output for [Fuku](https://github.com/zaneenders/dnd/blob/main/Sources/display/main.swift)
 ```
 Fuku, Wielder of Poles
     - previous cook
