@@ -1,3 +1,4 @@
+import Color
 import _DnD
 
 struct Fuku: CustomStringConvertible {

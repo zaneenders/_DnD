@@ -1,15 +1,25 @@
+import Color
+
 /* The basic attributes every character has */
-public protocol CharacterAttributes: CustomStringConvertible {}
+public protocol CharacterAttributes: CustomStringConvertible {
+    var value: Int { get }
+}
+
+extension CharacterAttributes {
+    public var description: String {
+        displayStat("\(Self.self)", self.value)
+    }
+}
+
+func displayStat(_ stat: String, _ value: Int) -> String {
+    "\(yellow(stat)) Defense: \(value + 10) Bonus: \(value)"
+}
 
 public struct Armor: CharacterAttributes {
     public init(_ value: Int) {
         self.value = value
     }
     public let value: Int
-
-    public var description: String {
-        "\(Self.self) Defense: \(value + 10) Bonus: \(value)"
-    }
 }
 
 public struct HP: CharacterAttributes {
@@ -17,10 +27,6 @@ public struct HP: CharacterAttributes {
         self.value = value
     }
     public let value: Int
-
-    public var description: String {
-        "\(Self.self) \(value)"
-    }
 }
 
 public struct Strength: CharacterAttributes {
@@ -28,10 +34,6 @@ public struct Strength: CharacterAttributes {
         self.value = value
     }
     public let value: Int
-
-    public var description: String {
-        "\(Self.self) Defense: \(value + 10) Bonus: \(value)"
-    }
 }
 
 public struct Dexterity: CharacterAttributes {
@@ -39,10 +41,6 @@ public struct Dexterity: CharacterAttributes {
         self.value = value
     }
     public let value: Int
-
-    public var description: String {
-        "\(Self.self) Defense: \(value + 10) Bonus: \(value)"
-    }
 }
 
 public struct Constitution: CharacterAttributes {
@@ -50,10 +48,6 @@ public struct Constitution: CharacterAttributes {
         self.value = value
     }
     public let value: Int
-
-    public var description: String {
-        "\(Self.self) Defense: \(value + 10) Bonus: \(value)"
-    }
 }
 
 public struct Intellect: CharacterAttributes {
@@ -61,10 +55,6 @@ public struct Intellect: CharacterAttributes {
         self.value = value
     }
     public let value: Int
-
-    public var description: String {
-        "\(Self.self) Defense: \(value + 10) Bonus: \(value)"
-    }
 }
 
 public struct Wisdom: CharacterAttributes {
@@ -72,10 +62,6 @@ public struct Wisdom: CharacterAttributes {
         self.value = value
     }
     public let value: Int
-
-    public var description: String {
-        "\(Self.self) Defense: \(value + 10) Bonus: \(value)"
-    }
 }
 
 public struct Charisma: CharacterAttributes {
@@ -83,10 +69,6 @@ public struct Charisma: CharacterAttributes {
         self.value = value
     }
     public let value: Int
-
-    public var description: String {
-        "\(Self.self) Defense: \(value + 10) Bonus: \(value)"
-    }
 }
 
 public struct Money {
@@ -103,7 +85,7 @@ public struct Money {
 extension Money: CustomStringConvertible {
     public var description: String {
         """
-        g:\(gold), s:\(silver), c:\(copper)
+        \(yellow("g")):\(gold), \(foreground(.bright(.white),"s")):\(silver), \(foreground(.int(94),"c")):\(copper)
         """
     }
 }
