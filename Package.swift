@@ -17,7 +17,13 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "display",
+            name: "knave",
+            dependencies: [
+                "_DnD",
+                .product(name: "Color", package: "color-palette"),
+            ]),
+        .executableTarget(
+            name: "spelljammer",
             dependencies: [
                 "_DnD",
                 .product(name: "Color", package: "color-palette"),
